@@ -1,0 +1,72 @@
+.solutions--section {
+  flex: 1;
+  padding: 1rem;
+  background: linear-gradient(#009fcb, #001b21);
+}
+
+.solutions--sectiontitle {
+  font-style: italic;
+  text-align: center;
+  margin: 0.25rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.solutions--allcards {
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.solution {
+  box-sizing: border-box;
+  flex-basis: 50%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding: .75rem;
+}
+
+.solution--card {
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  background-color: #fffad0;
+  padding: 1rem;
+  box-shadow: 0 0 0.5rem rgba(85, 189, 255, 0.5);
+}
+
+.solution--title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  color: rgb(85, 189, 255);
+}
+
+.solution--list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.solution--item {
+  flex: 1;
+  margin: 1.25rem;
+  font-size: 2.2rem;
+}
+
+.appversion {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 100%;
+  text-align: right;
+  font-style: italic;
+  color: rgb(200, 200, 200);
+}

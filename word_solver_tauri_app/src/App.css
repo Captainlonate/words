@@ -1,0 +1,126 @@
+.app--container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.letters--section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: rgb(85, 189, 255);
+  padding: 3rem 1rem;
+  text-align: center;
+  height: 25rem;
+  flex: 25rem;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.letters-inputandlabel {
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+}
+
+.letters--input--label {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 1.25rem;
+  text-align: left;
+  padding-left: 1em;
+}
+
+.letters--input {
+  box-sizing: content-box;
+  position: relative;
+  font-size: 3rem;
+  border-radius: 5px;
+  padding: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  width: 6.5em;
+  text-align: center;
+  border: none;
+}
+
+.letters--input:focus {
+  outline: 6px solid rgb(177, 112, 4);
+}
+
+.letters--button--clear {
+  margin-left: 2rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: rgb(177, 112, 4);
+  border: 2px solid white;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.letters--button--clear:hover {
+  background-color: rgb(190, 121, 5);
+}
+
+.letters--button--clear:active {
+  background-color: rgb(213, 136, 7);
+}
+
+.letters--both-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.cloudimage {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 10rem;
+  height: auto;
+  z-index: 1;
+}
+
+.lightwater {
+  position: absolute;
+  width: 120%;
+  margin-right: 0px;
+  margin-left: 0px;
+  background-size: contain;
+  background-repeat: repeat-x;
+  height: 38px;
+  bottom: 5px;
+  left: -30px;
+  z-index: 1;
+}
+
+.darkwater {
+  position: absolute;
+  width: 120%;
+  margin-right: 0px;
+  margin-left: 0px;
+  background-size: contain;
+  background-repeat: repeat-x;
+  height: 38px;
+  left: -60px;
+  bottom: -5px;
+  z-index: 3;
+}
+
+.palmtreeimage {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  width: 25rem;
+  height: auto;
+  z-index: 2;
+}
