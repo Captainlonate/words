@@ -4,6 +4,7 @@ use itertools::Itertools;
 use rand::seq::SliceRandom;
 use std::collections::HashMap;
 
+// Include the precomputed dictionary file as part of the binary
 const PRECOMPUTED_JSON: &'static str = include_str!("../../dictionary_files/precomputed_words.json");
 
 ///

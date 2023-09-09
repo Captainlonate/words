@@ -17,23 +17,22 @@ use std::{
     time::Instant,
 };
 
-// const PRECOMPUTED_JSON: &'static str =
-//     include_str!("../dictionary_files/precomputed_words.json");
-
 fn main() {
     let all_config = config::Config::default();
 
     match cli::Args::parse().mode {
+        // --mode files
         Some(RunMode::Files) => {
             println!("Processing New Dictionary Files.");
             dictionary::create_all_dictionary_files(&all_config);
         }
+        // --mode generate
         Some(RunMode::Generate) => {
             println!("Generating using precomputed words.");
             generate_boards(&all_config);
         }
         None => {
-            println!("Error: Pass --mode <>");
+            println!("Error: Pass --mode <files | generate>");
         }
     }
 }

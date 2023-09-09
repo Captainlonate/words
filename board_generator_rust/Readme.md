@@ -39,10 +39,10 @@ cargo clippy
 Measure-Command { .\target\release\rust_wordgame.exe | Out-Default }
 
 # Process new files
-cargo build --release && ./target/release/rust_wordgame --mode process-files
+cargo build --release && ./target/release/rust_wordgame --mode files
 
-# Solve for some letters
-./target/release/rust_wordgame --mode solve --letters tpalop
+# Generate boards
+cargo build --release && ./target/release/rust_wordgame --mode generate
 ```
 
 ---
