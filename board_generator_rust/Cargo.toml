@@ -1,0 +1,21 @@
+[package]
+name = "rust_wordgame"
+authors = ["Nathan Lough <captainlonate@gmail.com>"]
+version = "1.0.0"
+edition = "2021"
+description = "Generates cross-word-like/wordscape-like boards and stores them as JSON"
+keywords = ["wordscapes", "scrabble", "cross-word"]
+repository = "https://github.com/Captainlonate/wordgame"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.release]
+#strip = "debuginfo" # Automatically strip symbols from the binary
+
+[dependencies]
+rand = "0.8.4"
+itertools = "0.8.2"
+colored = "2.0.0"
+serde_json = "1.0.91"
+serde = { version = "1.0.152", features = ["derive"] }
+clap = { version = "4.1.4", features = ["derive"] }

@@ -1,0 +1,18 @@
+# https://rust-lang.github.io/rustfmt/?version=v1.5.1&search=#combine_control_expr
+#
+# Stable
+#
+max_width = 80
+fn_args_layout = "Tall"
+# Maximum width of the args of a function call before
+# falling back to vertical formatting.
+fn_call_width = 70
+tab_spaces = 4
+
+#
+# Unstable - Nightly only
+#
+# combine_control_expr = false
+# force_multiline_blocks = true
+# format_strings = true
+# struct_field_align_threshold = 20
