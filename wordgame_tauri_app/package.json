@@ -1,0 +1,35 @@
+{
+  "name": "tauri_wordgame",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^1.2.0",
+    "@types/lodash": "^4.14.191",
+    "framer-motion": "^9.0.1",
+    "lodash": "^4.17.21",
+    "ramda": "^0.28.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.0",
+    "rxjs": "^7.8.0",
+    "styled-components": "^5.3.6"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.2.2",
+    "@types/node": "^18.7.10",
+    "@types/ramda": "^0.28.23",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@types/styled-components": "^5.1.26",
+    "@vitejs/plugin-react": "^3.0.0",
+    "typescript": "^4.6.4",
+    "vite": "^4.0.0"
+  }
+}
