@@ -4,8 +4,12 @@ import (
 	"unicode"
 )
 
+// min and max VALID word lengths to make it into the clean dictionary
+const MIN_WORD_LENGTH int = 3
+const MAX_WORD_LENGTH int = 7
+
 func IsValid(w string) bool {
-	if len(w) < 4 || len(w) > 7 {
+	if len(w) < MIN_WORD_LENGTH || len(w) > MAX_WORD_LENGTH {
 		return false
 	}
 

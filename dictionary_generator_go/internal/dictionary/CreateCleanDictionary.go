@@ -11,9 +11,9 @@ import (
 func CreateCleanDictionaryFile() {
 	// File Paths (expects to be from project root)
 	cwd, _ := os.Getwd()
-	pathToFullDictionary := fmt.Sprintf("%s/assets/%s", cwd, "84000_gwicks.txt")
-	pathToBadDictionary := fmt.Sprintf("%s/assets/%s", cwd, "bad_words_to_exclude.txt")
-	pathToCleanDictionary := fmt.Sprintf("%s/assets/%s", cwd, "clean_words.txt")
+	pathToFullDictionary := fmt.Sprintf("%s/assets/%s", cwd, BASE_DICTIONARY_FILENAME)
+	pathToBadDictionary := fmt.Sprintf("%s/assets/%s", cwd, BAD_WORDS_FILENAME)
+	pathToCleanDictionary := fmt.Sprintf("%s/assets/%s", cwd, CLEAN_DICTIONARY_FILENAME)
 
 	// Hold clean and bad words
 	var cleanWords []string
