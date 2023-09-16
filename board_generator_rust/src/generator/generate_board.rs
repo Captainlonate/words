@@ -22,7 +22,10 @@ pub fn try_to_generate_a_board(
     // =====================================================
 
     // New Algorithm - Use the precomputed values
-    let starting_tuple = dictionary.get_random_starting_word()?;
+    // let starting_tuple = dictionary.get_random_starting_word()?;
+    let orig_starting_tuple = dictionary.get_random_starting_word()?.to_owned();
+    let mut starting_tuple: (String, Vec<String>) = (orig_starting_tuple.0.to_owned(), orig_starting_tuple.1.to_owned());
+    starting_tuple.1.retain(|x| x == "mise" || x == "mises");
     let random_seven_letter_word: String = starting_tuple.0.to_string();
     let all_possible_words: Vec<String> = starting_tuple.1.to_owned();
 
@@ -64,9 +67,10 @@ pub fn try_to_generate_a_board(
     // adds some variation, since it could be very common to always
     // end up with the same "max" number of words.
     // * get_random_float_in_range(0.55, 0.8))
-    let desired_words_count = (initial_words_shuffled.len() as f32
-        * get_random_float_in_range(0.50, 0.8))
-    .round();
+    // let desired_words_count = (initial_words_shuffled.len() as f32
+    //     * get_random_float_in_range(0.50, 0.8))
+    // .round();
+    let desired_words_count = initial_words_shuffled.len() + 1;
     // Set a maximum number of words to place on the board
     let capped_words_count: usize = get_random_int_in_range(
         all_config.generator.max_words_to_place - 3,
@@ -139,8 +143,12 @@ pub fn try_to_generate_a_board(
             // For performance reasons I'm limiting the number of possible locations
             // to only 1. I could add more randomness by trying ALL possible locations,
             // but it negatively impacts the speed.
+            // let locations_for_this_word =
+            //     bm.find_some_locations_for_word(word, 1);
             let locations_for_this_word =
-                bm.find_some_locations_for_word(word, 1);
+                bm.find_some_locations_for_word(word, 20);
+            
+            // println!("Matches = {:#?}", locations_for_this_word);
 
             if !locations_for_this_word.is_empty() {
                 // Again, I'm just taking the first (and only) location, but

@@ -82,8 +82,8 @@ impl Default for Config {
                 // At 15 boards, they are both at about 37 milliseconds.
                 // At 1,000 boards: on-the-fly = 1.2 seconds, and pre-computed = 155 milliseconds
                 // At 10,000 boards, on-the-fly is 12 seconds, and pre-computed is 1 sec.
-                number_of_boards: 10_000,
-                // number_of_boards: 1,
+                // number_of_boards: 10_000,
+                number_of_boards: 1,
                 should_log_times: true,
             },
             generator: GeneratorConfig {
@@ -95,8 +95,8 @@ impl Default for Config {
                 board_dimensions: 11,
                 min_words_to_consider_letters: 16,
                 // Don't log board info if you have a bunch of boards
-                should_log_board_info: false,
-                // should_log_board_info: true,
+                // should_log_board_info: false,
+                should_log_board_info: true,
             },
         }
     }

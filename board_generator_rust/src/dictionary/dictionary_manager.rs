@@ -89,9 +89,12 @@ impl DictionaryManager {
     }
 
     pub fn get_random_starting_word(&self) -> Option<(&String, &Vec<String>)> {
-        let random_word = self.subwords_keys.choose(&mut rand::thread_rng())?;
+        // let random_word = self.subwords_keys.choose(&mut rand::thread_rng())?;
 
-        self.subwords_map.get_key_value(random_word)
+        // self.subwords_map.get_key_value(random_word)
+        let random_word = "misuses".to_owned();
+
+        self.subwords_map.get_key_value(&random_word)
     }
 
     ///

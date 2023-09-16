@@ -322,6 +322,8 @@ impl BoardManager {
         // then we don't want to always "try" the same location, given the same board.
         let shuffled_cells = shuffle(&all_used_cells);
 
+        // println!("shuffled_cells:{:#?}", shuffled_cells);
+
         // This is where most of the evaluation logic is held. The idea is that
         // we want to try to lay the word over the already placed letter on the board,
         // and then check the surrounding cells to see if it's "ok" to lay the word there.
@@ -329,6 +331,9 @@ impl BoardManager {
         // and the final letter has to have an empty cell after it.
         let mut possible_locations: Vec<PossibleWordLocation> = vec![];
         for (cell, indicies) in shuffled_cells.iter() {
+            // if cell.letter != 'm' {
+            //     continue;
+            // }
             // Each of these is an index of the word_to_place where we can lay
             // the word over the letter on the board. If 'e', is the third letter
             // of the word, then we need to start placing it two cells up so that the
@@ -419,10 +424,37 @@ impl BoardManager {
                     }
                     let current_cell = current_cell_option.unwrap();
 
+                    // Does the current cell already contain a letter that matches
+                    // the one we're trying to place?
                     // It might match because it's used in a different word
                     // Or, it could match because it's the match index that we were expecting.
                     let letter_is_already_on_board =
                         current_cell.letter == letter;
+
+                    //
+                    // Is this cell and the next one both occupied?
+                    if letter_is_already_on_board && !is_last_letter  {
+                        let passes_mise_mises_check = match opposite_direction {
+                            Direction::H => {
+                                !self.cell_is_used(
+                                    start_row,
+                                    start_col + letter_idx + 1,
+                                )
+                            }
+                            Direction::V => {
+                                !self.cell_is_used(
+                                    start_row + letter_idx + 1,
+                                    start_col,
+                                )
+                            }
+                        };
+                        if !passes_mise_mises_check {
+                            println!("Encountered an overlap!");
+                            println!("Trying to place: {:#?}", word_to_place);
+                            println!("At {:#?} ({:?},{:?})", current_cell, current_row, current_col);
+                            break;
+                        }
+                    }
 
                     // If this is the last cell in the word, then the next
                     // cell must be empty.
