@@ -1,6 +1,6 @@
 package dictionary
 
-import "captainlonate/words/dictword"
+import "captainlonate/words/internal/dictword"
 
 func createSortedUniqueMap(allCleanWords []string) map[string][][]string {
 	sortedUniquesMap := make(map[string][][]string)

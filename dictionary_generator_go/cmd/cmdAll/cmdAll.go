@@ -1,7 +1,7 @@
 package main
 
 import (
-	"captainlonate/words/dictionary"
+	"captainlonate/words/internal/dictionary"
 )
 
 func main() {

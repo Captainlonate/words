@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"captainlonate/words/dictword"
+	"captainlonate/words/internal/dictword"
 )
 
 func CreateCleanDictionaryFile() {

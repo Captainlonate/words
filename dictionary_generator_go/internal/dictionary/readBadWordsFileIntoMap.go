@@ -2,7 +2,7 @@ package dictionary
 
 import (
 	"bufio"
-	"captainlonate/words/dictword"
+	"captainlonate/words/internal/dictword"
 	"fmt"
 	"os"
 )
